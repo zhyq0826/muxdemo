@@ -9,6 +9,6 @@ import (
 func Middleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		next.ServeHTTP(w, r)
-		fmt.Println(r.RequestURI)
+		fmt.Println("middleware ==> ",r.RequestURI)
 	})
 }
